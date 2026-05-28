@@ -2,10 +2,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "webpack",
-  "env": [
-    {
-      "key": "REACT_APP_API_URL",
-      "value": "https://rosey-backend.up.railway.app"
-    }
-  ]
+  "env": {
+    "REACT_APP_API_URL": "@react_app_api_url"
+  },
+  "envPrefix": "REACT_"
 }
