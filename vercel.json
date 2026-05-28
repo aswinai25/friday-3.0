@@ -1,9 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "webpack",
-  "env": {
-    "REACT_APP_API_URL": "@react_app_api_url"
-  },
-  "envPrefix": "REACT_"
+  "framework": "webpack"
 }
