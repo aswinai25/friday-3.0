@@ -5,7 +5,7 @@
   "env": [
     {
       "key": "REACT_APP_API_URL",
-      "value": "Enter your API URL here"
+      "value": "https://rosey-backend.up.railway.app"
     }
   ]
 }

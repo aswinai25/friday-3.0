@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: friday-backend
+    container_name: rosey-backend
     ports:
       - "8000:8000"
     environment:
@@ -13,9 +13,9 @@ services:
       LIVEKIT_API_KEY: ${LIVEKIT_API_KEY:-your_api_key}
       LIVEKIT_API_SECRET: ${LIVEKIT_API_SECRET:-your_api_secret}
     networks:
-      - friday-network
+      - rosey-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/config"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -26,7 +26,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
-    container_name: friday-frontend
+    container_name: rosey-frontend
     ports:
       - "80:80"
     environment:
@@ -35,9 +35,9 @@ services:
       backend:
         condition: service_healthy
     networks:
-      - friday-network
+      - rosey-network
     restart: unless-stopped
 
 networks:
-  friday-network:
+  rosey-network:
     driver: bridge
