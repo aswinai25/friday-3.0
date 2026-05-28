@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "webpack",
+  "env": [
+    {
+      "key": "REACT_APP_API_URL",
+      "value": "Enter your API URL here"
+    }
+  ]
+}
