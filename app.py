@@ -64,16 +64,15 @@ async def generate_token(request: TokenRequest) -> TokenResponse:
                 token = AccessToken(
                     api_key=LIVEKIT_API_KEY,
                     api_secret=LIVEKIT_API_SECRET,
-                    identity=request.username,
-                    name=request.username,
-                    grants={
-                        "room": request.room,
-                        "roomJoin": True,
-                        "canPublish": True,
-                        "canPublishData": True,
-                        "canSubscribe": True,
-                    }
                 )
+                # Set identity and grants using properties
+                token.identity = request.username
+                token.name = request.username
+                token.grants.room = request.room
+                token.grants.room_join = True
+                token.grants.can_publish = True
+                token.grants.can_publish_data = True
+                token.grants.can_subscribe = True
                 
                 return TokenResponse(
                     token=token.to_jwt(),
